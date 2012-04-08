@@ -19,7 +19,7 @@ tetris_game::~tetris_game() {
   figure_factory::deinit_figures();
   if (game)                  delete game;
   if (ui)                    delete ui;
-  if (_hud)                   delete _hud;
+  if (_hud)                  delete _hud;
   if (game_canvas)           delete game_canvas;
   if (preview_figure_canvas) delete preview_figure_canvas;
 }
@@ -210,8 +210,10 @@ bool tetris_game::on_message(msgid msg, void *param1, void *param2, void *param3
       ui->set_hidden(true);
       paused = false;
     }
+    return true;
   } else if (msg == main_menu::msg_new_game) {
     new_game();
+    return true;
   } else if (msg == main_menu::msg_exit_game) {
     on_message(msgid_exit_application,0,0,0,0);
     return true;

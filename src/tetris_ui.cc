@@ -89,10 +89,10 @@ hud::hud(frame* parent, point pos, canvas* preview_canvas) \
 }
 
 std::string int_to_string(int n) {
-	std::stringstream val;
-	val << n;
-	return val.str();
-	}
+  std::stringstream val;
+  val << n;
+  return val.str();
+}
 
 void hud::update_labels(int score, int level, int lines) {
   _score_label->set_text(int_to_string(score));
